@@ -1,42 +1,247 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* HomePage Styles */
+.home-page {
+  background-image: url('/images/iteration-1-images/home-banner.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 10rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.home-page h1 {
+  font-family: 'Satisfy', cursive;
+  font-size: 4rem;
+  color: #FDC913; /* Sarı */
+}
+
+.home-page p {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.home-page button {
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+}
+
+/* OrderPage Styles */
+.order-page-container {
+  background-color: #FAF7F2; /* Bej */
+}
+
+.order-header {
+  background-color: #CE2829; /* Kırmızı */
+  color: #FAF7F2; /* Bej */
+  padding: 2rem 0;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.order-header h1 {
+  font-family: 'Satisfy', cursive;
+  font-size: 3rem;
+  margin: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.order-header nav {
+  font-family: 'Barlow', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.order-header nav .active {
+  font-weight: bold;
 }
 
-.card {
-  padding: 2em;
+.order-main-content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
 }
 
-.read-the-docs {
-  color: #888;
+.pizza-info {
+  margin-bottom: 2rem;
 }
+
+.pizza-info h2 {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.pizza-price-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.pizza-price-rating .price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #292929;
+}
+
+.pizza-price-rating .rating,
+.pizza-price-rating .reviews {
+  color: #5F5F5F;
+}
+
+.pizza-description {
+  color: #5F5F5F;
+  line-height: 1.6;
+}
+
+.form-groups-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.form-group h3 {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.form-group .required {
+  color: #CE2829;
+}
+
+.size-group label, .dough-group select {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.dough-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #5F5F5F;
+}
+
+.toppings-group {
+  margin-bottom: 2rem;
+}
+
+.toppings-group p {
+  color: #5F5F5F;
+  margin-bottom: 1rem;
+}
+
+.toppings-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.toppings-container label {
+  color: #5F5F5F;
+}
+
+.name-group input, .notes-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.notes-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.order-page .error {
+  color: #CE2829; /* Kırmızı */
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.order-summary-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.order-summary {
+  flex-basis: 40%;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 6px;
+}
+
+.order-summary h3 {
+  margin-bottom: 1rem;
+}
+
+.order-summary p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  color: #5F5F5F;
+}
+
+.order-summary p.total {
+  font-weight: bold;
+  color: #292929;
+  margin-top: 1rem;
+}
+
+.order-summary-container button {
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+/* SuccessPage Styles */
+.success-page {
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 3rem;
+  text-align: center;
+  background-color: #292929; /* Koyu Gri */
+  color: #FAF7F2; /* Bej */
+  border-radius: 10px;
+}
+
+.success-page h2 {
+  font-family: 'Satisfy', cursive;
+  color: #FDC913; /* Sarı */
+  font-size: 3rem;
+}
+
+.success-page h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.success-page h4 {
+  font-size: 2rem;
+  color: #FDC913;
+  margin-bottom: 2rem;
+}
+
+.success-page hr {
+  border: 1px solid #5F5F5F;
+  margin-bottom: 2rem;
+}
+
+.success-page p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.success-page p strong {
+  color: #FDC913;
+}
+
