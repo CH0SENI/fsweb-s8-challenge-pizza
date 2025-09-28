@@ -2,7 +2,87 @@
 
 ## Proje Açıklaması
 
-Bu Single Page Application (SPA) projesi, geçmiş sprint boyunca öğrenilen kavramları ve teknikleri uygulamana ve bunları somut bir projede kullanmanı sağlayacak. Bu sprintte **tek sayfa uygulamalarını** (SPA) keşfettin. Sprint boyunca, **routing, formlar, ve cypress testlerini** öğrendin. Challenge skorun, bu sprint boyunca işlenen materyali kullanarak bağımsız çalışma yapabilme yeteneğinin bir göstergesi olacak. Bu projeyi de ödevlerdeki gibi tek başına yapacaksın.
+Bu Single Page Application (SPA) projesi, geçmiş sprint boyunca öğrenilen kavramları ve teknikleri uygulamana ve bunları somut bir projede kullanmanı sağlayacak. Bu sprintte **tek sayfa uygulamalarını** (SPA) keşfettin. Sprint boyunca, **routing, formlar, ve cypress testlerini** öğrendin. Challenge skorun, bu sprint boyu- **3 Gereksinimleri Aşıyor:**
+  - Doğru yanıta ek, en az bir başka çözüm ile de daha geniş perspektiften yanıtlayabilme, ikisi arasındaki benzerlik ve uygulama farklarını karşılaştırabilmek.
+
+## 🧪 Testing
+
+Bu proje kapsamlı Cypress E2E testleri ile gelir.
+
+### Test Komutları
+
+```bash
+# Cypress GUI'sini açmak için
+npm run cypress:open
+
+# Testleri headless modda çalıştırmak için
+npm run cypress:run
+
+# Testleri geliştirme modunda çalıştırmak için  
+npm run test:e2e:dev
+
+# Tüm testleri çalıştırmak için
+npm run test:e2e
+```
+
+### Test Dosyaları
+
+- **`pizza-order.cy.js`** - Ana uygulama akışı testleri
+- **`form-validation.cy.js`** - Form doğrulama testleri
+- **`navigation.cy.js`** - Sayfa navigasyon testleri
+- **`ui-ux.cy.js`** - Kullanıcı arayüzü ve deneyim testleri
+
+### Test Kapsamı
+
+✅ **Ana Akış Testleri:**
+- Homepage yükleme ve navigasyon
+- Sipariş formu doldurma
+- Başarı sayfası görüntüleme
+
+✅ **Form Validasyon Testleri:**
+- İsim doğrulama (minimum 3 karakter)
+- Pizza boyutu seçimi zorunlulukları
+- Hamur tipi seçimi
+- Malzeme seçimi (minimum 4, maksimum 10)
+- Miktar kontrolü
+
+✅ **UI/UX Testleri:**
+- Responsive tasarım (mobile, tablet, desktop)
+- Loading states
+- Error mesajları
+- Button durumları
+- Instagram fotoğrafları
+
+✅ **Navigasyon Testleri:**
+- Browser back/forward butonları
+- Direct URL erişimi
+- Breadcrumb navigasyon
+
+### CI/CD
+
+GitHub Actions workflow dosyası (`.github/workflows/cypress.yml`) otomatik test çalıştırma için yapılandırılmıştır:
+
+- Her push ve pull request'te testler çalışır
+- Test başarısız olduğunda screenshot ve video kayıtları
+- Chrome browser ile headless test çalıştırma
+
+### Custom Cypress Commands
+
+Projede kullanışlı custom commands tanımlanmıştır:
+
+```javascript
+// Tam sipariş formu doldurma
+cy.fillCompleteOrder(userData)
+
+// Submit buton durumu kontrol
+cy.checkSubmitButton(shouldBeEnabled)
+
+// Fiyat hesaplama doğrulama
+cy.verifyPriceCalculation(expectedPrice)
+
+// Instagram fotoğrafları doğrulama
+cy.verifyInstagramPhotos()
+```a işlenen materyali kullanarak bağımsız çalışma yapabilme yeteneğinin bir göstergesi olacak. Bu projeyi de ödevlerdeki gibi tek başına yapacaksın.
 
 S8 içinde de Workintech eğitmenlerine, adeta bir teknik mülakattaymış gibi, bu projeyi sunmanı istiyoruz.
 

@@ -199,6 +199,7 @@ const OrderPage = ({ setOrderData }) => {
                         checked={form.size === size.value}
                         onChange={handleChange} 
                         required 
+                        data-cy={`size-${size.value}`}
                       />
                       <span className="size-label">{size.label}</span>
                     </label>
@@ -208,7 +209,7 @@ const OrderPage = ({ setOrderData }) => {
 
               <div className="form-group dough-group">
                 <h3>Hamur Seç <span className="required">*</span></h3>
-                <select name="dough" value={form.dough} onChange={handleChange} required>
+                <select name="dough" value={form.dough} onChange={handleChange} required data-cy="dough-select">
                   <option value="" disabled>Hamur Kalınlığı</option>
                   {DOUGH_OPTIONS.map(dough => (
                     <option key={dough.value} value={dough.value}>
@@ -233,6 +234,7 @@ const OrderPage = ({ setOrderData }) => {
                       checked={form.toppings.includes(topping)}
                       onChange={handleChange}
                       disabled={!form.toppings.includes(topping) && form.toppings.length >= MAX_TOPPINGS}
+                      data-cy={`topping-${topping.toLowerCase().replace(/\s+/g, '-')}`}
                     />
                     <span className="topping-checkmark"></span>
                     <span className="topping-name">{topping}</span>
@@ -253,6 +255,7 @@ const OrderPage = ({ setOrderData }) => {
                 value={form.name}
                 onChange={handleChange}
                 className={errors.name ? 'error' : ''}
+                data-cy="name-input"
               />
               {errors.name && <p className="error-message">{errors.name}</p>}
             </div>
@@ -294,6 +297,7 @@ const OrderPage = ({ setOrderData }) => {
                 type="submit" 
                 className={`order-submit-btn ${isSubmitting ? 'loading' : ''}`}
                 disabled={!isValid || isSubmitting}
+                data-cy="order-submit-btn"
               >
                 {isSubmitting ? 'SİPARİŞ GÖNDERİLİYOR...' : 'SİPARİŞ VER'}
               </button>

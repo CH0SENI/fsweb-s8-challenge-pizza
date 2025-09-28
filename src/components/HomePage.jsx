@@ -13,7 +13,7 @@ const HomePage = () => {
             KOD ACIKTIRIR <br /> PİZZA, DOYURUR
           </h1>
           <Link to="/order">
-            <button className="home-button-it2">ACIKTIM</button>
+            <button className="home-button-it2" data-cy="order-btn">ACIKTIM</button>
           </Link>
         </div>
       </section>
